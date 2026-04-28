@@ -3,7 +3,7 @@
 "Welcome! This repository contains the source code for my personal portfolio website,developed during my software engineering studies."
 
 ## 🌐 Live Demo
-You can visit the live version here: **[www.sudenazoztoprak.com](https://www.sudenazoztoprak.com)**
+You can visit the live version here: **[sudenazoztoprak.com](https://sudenazoztoprak.com)**
 
 > [!IMPORTANT]
 > **Note:** This website is currently optimized for desktop viewing. Mobile responsiveness is under development.
