@@ -1,0 +1,189 @@
+/* * Sude Naz Öztoprak | Portfolio Stylesheet
+ * Theme: Celestial Engineering (Modern Dark)
+ * Features: Glassmorphism, Smooth Transitions, Responsive Layout
+ */
+
+/* 1. Reset & Global Variables */
+:root {
+    --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --accent-blue: #70a1ff;
+    --accent-purple: #4834d4;
+    --text-main: #e0e0e0;
+    --text-dim: #b2bec3;
+    --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Body & Background */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    overflow-x: hidden;
+}
+
+/* 3. Main Glass Container */
+.container {
+    max-width: 850px;
+    width: 100%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 3.5rem;
+    border-radius: 28px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+/* 4. Typography Styles */
+h1 {
+    
+    font-size: clamp(1.6rem, 5vw, 2.8rem); 
+    
+    
+    white-space: nowrap; 
+    
+    
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    
+    
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+p {
+    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--text-dim);
+    font-weight: 300;
+   
+}
+
+.hero-text {
+    font-size: 1.3rem;
+    color: #fff;
+    border-left: 4px solid var(--accent-purple);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, rgba(72, 52, 212, 0.1), transparent);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+strong {
+    color: var(--accent-blue);
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(112, 161, 255, 0.3);
+}
+
+/* 5. Language Switcher */
+.lang-switch {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: var(--glass-bg);
+    padding: 6px;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    z-index: 100;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 10px 18px;
+    border-radius: 10px;
+    opacity: 0.4;
+    transition: var(--transition-smooth);
+}
+
+.lang-btn.active {
+    opacity: 1;
+    background: var(--accent-purple);
+    box-shadow: 0 5px 15px rgba(72, 52, 212, 0.5);
+}
+
+/* 6. Dynamic Social Buttons */
+.social-links {
+    margin-top: 3.5rem;
+    display: flex;
+    gap: 1.2rem;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 2.5rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 12px 24px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links a::before {
+    content: '◈'; 
+    font-size: 0.8rem;
+    color: var(--accent-blue);
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #fff;
+    transform: translateY(-6px) scale(1.02);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+.social-links a[href*="linkedin"]:hover { border-color: #0077b5; box-shadow: 0 10px 25px rgba(0, 119, 181, 0.2); }
+.social-links a[href*="github"]:hover { border-color: #ffffff; box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1); }
+.social-links a[href*="mailto"]:hover { border-color: #ff4757; box-shadow: 0 10px 25px rgba(255, 71, 87, 0.2); }
+
+/* 7. Animations */
+.fade-in {
+    animation: entranceEffect 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes entranceEffect {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 8. Mobile Responsiveness */
+@media (max-width: 768px) {
+    body { padding: 1rem; }
+    .container { padding: 2rem; }
+    h1 { font-size: 2.2rem; }
+    .social-links { justify-content: center; flex-direction: column; }
+    .lang-switch { top: 1rem; right: 1rem; }
+}
