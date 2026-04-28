@@ -1,0 +1,21 @@
+# OS Metadata 
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs and Editors 
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Logs (Hata kayıtları)
+*.log
+npm-debug.log*
+
+
+node_modules/
+.env
+dist/
+build/
